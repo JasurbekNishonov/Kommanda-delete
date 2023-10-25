@@ -1,10 +1,20 @@
 
-let str="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, dolor!"
-let arr=str.split('')
-for(let i=0; i<arr.length; i++){
-    if(arr[i]=="a" || arr[i]=="e" || arr[i]=="u" || arr[i]=="o" || arr[i]=="i"){
-        arr.splice(i,1)
-    }
+const arr =[];
+
+function Kommanda(){    
+    let matn =prompt("Kommandani kiriting")
+        if(matn.slice(0,3)=="add"){
+            arr.push(matn.slice(5,30))
+            Kommanda()
+        }else if(matn.slice(0,3)=="del"){
+                arr.pop()
+            Kommanda()
+        }else if(matn=="stop"){
+            console.log(arr)
+        }
 }
-let string=arr.join("")
-console.log(string)
+Kommanda()
+
+
+
+
