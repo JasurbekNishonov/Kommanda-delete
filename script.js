@@ -7,14 +7,17 @@ function Kommanda(){
             arr.push(matn.slice(5,30))
             Kommanda()
         }else if(matn.slice(0,3)=="del"){
-                arr.pop()
+                for (const key in arr) {
+                    if(matn.slice(5,30)==arr[key]){
+                        arr.splice(key,1)
+                    }
+                }
             Kommanda()
         }else if(matn=="stop"){
             console.log(arr)
         }
 }
 Kommanda()
-
 
 
 
